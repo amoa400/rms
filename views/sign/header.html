@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<title><%= pageTitle %></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="HandheldFriendly" content="true">
+
+		<%- Loader('/assets/base.css')
+			.css('/css/jquery-ui.min.css')
+			.css('/css/bootstrap.min.css')
+			.css('/css/font-awesome.min.css')
+			.css('/css/global.css')
+			.css('/css/fantview.css')
+			.css('/css/sign.css')
+			.done(assetsMap, '')
+		%>
+		<%- Loader('/assets/sign.css')
+			.css('/css/sign.css')
+			.done(assetsMap, '')
+		%>
+		<%- Loader('/assets/base.js')
+			.js('/js/jquery.min.js')
+			.js('/js/jquery-ui.min.js')
+			.js('/js/bootstrap.min.js')
+			.js('/js/jquery.base64.js')
+			.js('/js/jquery.mousewheel.js')
+			.js('/js/jquery.resize.js')
+			.js('/js/jquery.form.js')
+			.js('/js/global.js')
+			.js('/js/fantview.js')
+			.done(assetsMap, '')
+		%>
+	</head>
+
+	<body>
+
+	<div class="left">
+	<div class="cont">
+		<div class="item"><%= brand %></div>
+		<div class="item"><%= slogan %></div>
+		<div class="item2">他们也在用：</div>
+		<div class="item2">
+			<div class="photo"><img src="/image/index/baixing.png"></div>
+			<div class="desc">百姓网，每月浏览量近10亿，每月新增信息量超过300万条的超大型c2c分类信息网站</div>
+			<div class="clear"></div>
+		</div>
+		<div class="item2">
+			<div class="photo"><img src="/image/index/eleme.png"></div>
+			<div class="desc">饿了么，中国最大的餐饮O2O平台。业务主要覆盖全国12个城市，加盟餐厅数共计50000家</div>
+			<div class="clear"></div>
+		</div>
+		<div class="item2">
+			<div class="photo"><img src="/image/index/hailong.png"></div>
+			<div class="desc">
+	海隆软件，上海市著名软件企业、国家规划布局内重点软件企业，软件外包的“元老级”企业</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>

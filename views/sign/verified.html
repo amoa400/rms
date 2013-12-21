@@ -1,0 +1,29 @@
+<% include header.html %>
+
+<div class="right form_div">
+<div class="cont">
+	<div class="logo"><img src="/image/logo.png"></div>
+	<div class="head"><%= slogan %></div>
+	<div class="content">
+		<div class="item">邮箱验证成功，欢迎加入<%= brand %></div>
+		<div class="item"><a href="/activity" class="btn btn-success">进入<%= brand %><a/></div>
+	</div>
+</div>
+</div>
+
+<div class="clear"></div>
+
+<script>
+	$().ready(function() {
+		var wait = 3;
+		setInterval(function(){
+			var time = --wait;
+			if(time <= 0) {
+				location.href = '/activity';
+				clearInterval(interval);
+			};
+		}, 1000);
+	});
+</script>
+
+<% include footer.html %>

@@ -1,0 +1,203 @@
+html,body {
+	width: 100%;
+	height: 100%;
+	background: #ffffff;
+}
+body {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	overflow: -moz-scrollbars-vertical;
+}
+
+/* 头部 */
+.header {
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #ffffff;
+	color: #808080;
+	border-bottom: 1px solid #cbcccd;
+	-moz-box-shadow: 0 0 1px #cbcccd;
+	-webkit-box-shadow: 0 0 1px #cbcccd;
+	box-shadow: 0 0 1px #cbcccd;
+	z-index: 999;
+}
+
+.header .title {
+	float: left;
+	height: 100%;
+	padding-top: 13px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.header .title:hover {
+	background: #f5f5f5;
+}
+.header .title .logo {
+	display: inline-block;
+}
+.header .title .logo img {
+	height: 20px;
+	width: 105px;
+}
+.header .title .text {
+	display: inline-block;
+	vertical-align: -4px;
+	margin-left: 6px;
+}
+
+.header .buttons {
+	float: right;
+	height: 100%;
+}
+.header .buttons > .item {
+	float: left;
+	border-left: 1px solid #e5e5e5;
+	height: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 14px;
+}
+.header .buttons > .item:hover {
+	background: #f5f5f5;
+}
+.header .buttons > .item .item {
+	display: inline-block;
+}
+.header .buttons > .item .icon {
+	margin-right: 5px;
+	vertical-align: -1px;
+	font-size: 18px;
+}
+.header .buttons > .item .down {
+	margin-left: 2px;
+	vertical-align: 3px;
+}
+.header .buttons > .item .photo {
+	vertical-align: 3px;
+	margin-right: 5px;
+}
+.header .buttons > .item img {
+	height: 25px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+.header .buttons > .user {
+	padding-top: 13px;
+}
+
+/* 页面 */
+.page {
+	padding-top: 1px;
+}
+
+/* 左边栏 */
+.page_left {
+	width: 140px;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	background: #fafafa;
+	border-right: 1px solid #e6e6e6;
+}
+.page_left .split {
+	border-top: 1px solid #e6e6e6;
+}
+.page_left .item {
+	font-size: 14px;
+	color: #aeadad;
+	padding-top: 13px;
+	padding-bottom: 12px;
+	cursor: pointer;
+}
+.page_left .item .icon {
+	background-image: url('../image/icon/left_panel_grey.png');
+	float: left;
+	width: 28px;
+	height: 24px;
+	margin-left: 31px;
+}
+.page_left .item_activity .icon {
+	background-position: 0px 0px;
+}
+.page_left .item_task .icon {
+	background-position: -33px 0px;
+}
+.page_left .item_event .icon {
+	background-position: -66px 0px;
+}
+.page_left .item_position .icon {
+	background-position: -99px 0px;
+}
+.page_left .item_resume .icon {
+	background-position: -132px 0px;
+}
+.page_left .item_talent .icon {
+	background-position: -165px 0px;
+}
+.page_left .item_test .icon {
+	background-position: -198px 0px;
+}
+.page_left .item_interview .icon {
+	background-position: -231px 0px;
+}
+.page_left .item_report .icon {
+	background-position: -264px 0px;
+}
+.page_left .item_setting .icon {
+	background-position: -297px 0px;
+}
+.page_left .item .text {
+	float: left;
+	margin-left: 10px;
+	height: 24px;
+	width: 35px;
+	line-height: 24px;
+	text-align: right;
+}
+.page_left .item:hover {
+	background: #eeeeee;
+}
+.page_left .active {
+	background: #0066aa;
+	color: #ffffff;
+	border-color: #0066aa;
+}
+.page_left .active .icon {
+	background-image: url('../image/icon/left_panel_white.png');
+}
+.page_left .active:hover {
+	background: #0066aa;
+}
+.page_left .version {
+	position: absolute;
+	bottom: 15px;
+	text-align: center;
+	font-size: 10px;
+	width: 100%;
+	color: #d0d0d0;
+	text-shadow: 0px 0px 1px #f6f6f6;
+}
+
+/* 右边栏 */
+.page_right {
+	width: 60px;
+	position: fixed;
+	top: 50px;
+	right: 0;
+	background: #ffffff;
+	border-left: 1px solid #e6e6e6;
+}
+
+/* 主要内容 */
+.page_content {
+	margin-left: 140px;
+	margin-top: 49px;
+	padding: 20px;
+}
+
+/* 职位 */
+.position {}

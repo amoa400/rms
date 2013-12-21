@@ -1,0 +1,14 @@
+
+		<script>
+			$().ready(function() {
+				var bodyHeight = parseInt($('body').css('height'));
+				var leftHeight = parseInt($('.left .cont').css('height'));
+				$('.left .cont').css('margin-top', (bodyHeight - leftHeight) / 5 * 2);
+				var rightHeight = parseInt($('.right .cont').css('height'));
+				$('.right .cont').css('margin-top', (bodyHeight - rightHeight) / 5 * 2);
+			});
+		</script>
+
+	</body>
+
+</html>

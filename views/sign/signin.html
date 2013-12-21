@@ -1,0 +1,35 @@
+<% include header.html %>
+		
+<div class="right form_div">
+<div class="cont">
+	<div class="logo"><img src="/image/logo.png"></div>
+	<div class="head"><%= slogan %></div>
+	<div class="content">
+	<form name="register" action="/signinDo" method="post" class="ftv_form">
+		<div class="item">
+			<div class="tt">邮箱<span class="tip"></span></div>
+			<div class="ct"><input name="email" type="text" class="form-control"></div>
+		</div>
+		<div class="item">
+			<div class="tt">密码<span class="tip"></span></div>
+			<div class="ct"><input name="password" type="password" class="form-control"></div>
+		</div>
+		<div class="item submit">
+			<div class="tt"></div>
+			<div class="ct"><input type="submit" value="登录" class="form-control btn btn-primary"></div>
+		</div>
+		<div class="item" style="text-align:center;margin-top:30px;color:#999999;">
+			<a href="/signup"><i class="fa fa-user"></i> 注册帐号</a>　<a href="/forgot"><i class="fa fa-lock"></i> 忘记密码</a>
+		</div>
+		<span class="submitTip hidden">登录</span>
+		<span class="submittingTip hidden">正在登录</span>
+		<span class="successTip hidden">登录成功</span>
+		<span class="failTip hidden">登录失败</span>
+	</form>
+	</div>
+</div>
+</div>
+
+<div class="clear"></div>
+
+<% include footer.html %>
