@@ -16,7 +16,7 @@ app.configure(function() {
   app.set('view engine', 'html');
   // 使用ejs来解析html
   app.engine('html', require('ejs').renderFile);
-  
+
   // 解析cookie
   app.use(express.cookieParser());
   // 使用session
@@ -66,3 +66,4 @@ http.createServer(app).listen(app.get('port'), function(){
 require('./lib/route')(app);
 
 module.exports = app;
+

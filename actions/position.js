@@ -2,9 +2,16 @@ var action = new Action();
 module.exports = action;
 
 /**
-  * 注册页面
+  * 职位列表
   */
 action.list = function(req, res) {
-  res.render('position/list', {pageTitle: '注册 - 加入' + C('brand'), email: req.params.email});
+  res.render('position/list');
+}
+
+/**
+  * 新建职位
+  */
+action.create = function(req, res) {
+  res.send('123');
 }
 

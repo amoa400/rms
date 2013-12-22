@@ -47,32 +47,67 @@ function FTV_Page() {
 
 	// 初始化函数
 	var init = function() {
-		fetch(location.pathname);
-		$('.ftv_link').click(fetch)
-		// 生成页面
-		//generateHeader();
+		// 检查版本对照表
+		if (lsg.viewsVersion == null) lsg.viewsVersion = '[]';
+		var tmpVersion = $.evalJSON(lsg.viewsVersion);
+		for (var i in viewsVersion) {
+			var flag = true;
+			for (var j in tmpVersion) {
+				if (viewsVersion[i].id == tmpVersion[j].id && viewsVersion[i].name == tmpVersion[j].name && viewsVersion[i].mtime == tmpVersion[j].mtime && lsg['viewItem_' + viewsVersion[i].id] != null) 
+					flag = false;
+			}
+			// 获取新的模板
+			if (flag) {
+				tmpVersion[viewsVersion[i].id] = viewsVersion[i];
+				cache(viewsVersion[i].id);
+			}
+		}
+		lsg.viewsVersion = $.toJSON(tmpVersion);
+		// 监听按钮点击
+		$('.ftv_link').live('click', fetch);
+		window.onpopstate = function() {
+			fetch(location.pathname, true);
+		}
+	}
+
+	// 缓存页面
+	var cache = function(id, callback) {
+		$.get(
+			'/getView',
+			{id: id},
+			function(res) {
+				lsg['viewItem_' + id] = res;
+				if (typeof callback == 'function')
+					callback();
+			}
+		);
 	}
 
 	// 获取页面内容
-	var fetch = function(u) {
+	var fetch = function(u, notPush) {
 		// 获取路径
 		url = $(this).attr('md_url');
 		if (url == null || url == '') url = u;
-		// ui响应
+		// 改变路径
+		if (url != location.href && notPush == null)
+			window.history.pushState({}, '', url);
+		// 左边栏高亮
 		params = url.split('/');
 		highlightLeftPanel(params[1]);
-		// 获取内容
-		$.get(
-			url,
-			{pjax: 1},
-			function(res) {
-				// 改变路径
-				if (url != location.href)
-					window.history.pushState({}, '', url);
-				// 改变内容
-				$('.page_content').html(res);
+		// 查看和哪个视图匹配
+		var tmpVersion = $.evalJSON(lsg.viewsVersion);
+		for (var i in tmpVersion) {
+			var reg = eval(tmpVersion[i].reg);
+			if (reg.test(url)) {
+				if (lsg['viewItem_' + tmpVersion[i].id] != null)
+					$('.page_content').html(lsg['viewItem_' + tmpVersion[i].id]);
+				else
+					cache(tmpVersion[i].id, function() {
+						$('.page_content').html(lsg['viewItem_' + tmpVersion[i].id]);
+					})
+				break;
 			}
-		);
+		}
 	}
 
 	// 左边栏高亮
@@ -103,8 +138,7 @@ function FTV_Layout() {
 	// 页面布局
 	var setPage = function() {
 		$('.page_left').css('height', bodyHeight - rt($('.header').css('height')));
-		$('.page_right').css('height', bodyHeight - rt($('.header').css('height')));
-		$('.page_content').css('width', bodyWidth - rt($('.page_left').css('width'))  - rt($('.page_right').css('width')));
+		$('.page_content').css('width', bodyWidth - rt($('.page_left').css('width')));
 	}
 	
 	_this.layout = function() {

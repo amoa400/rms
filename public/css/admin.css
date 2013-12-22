@@ -182,22 +182,67 @@ body {
 	text-shadow: 0px 0px 1px #f6f6f6;
 }
 
-/* 右边栏 */
-.page_right {
-	width: 60px;
-	position: fixed;
-	top: 50px;
-	right: 0;
-	background: #ffffff;
-	border-left: 1px solid #e6e6e6;
-}
-
 /* 主要内容 */
 .page_content {
+	position: relative;
 	margin-left: 140px;
 	margin-top: 49px;
 	padding: 20px;
 }
 
-/* 职位 */
-.position {}
+/* 页面头部 */
+.page_header {
+	height: 50px;
+	position: fixed;
+	top: 50px;
+	left: 140px;
+	width: 100%;
+	border-bottom: 1px solid #e6e6e6;
+	background: #fafafa;
+}
+
+/* 列表 */
+.list {}
+.list .category {
+}
+.list .category .item {
+	float: left;
+	height: 49px;
+	line-height: 50px;
+	margin-left: 20px;
+	cursor: pointer;
+	color: #666666;
+}
+.list .category .item:hover {
+	color: #0066aa;
+}
+.list .category .active {
+	color: #0066aa;
+}
+.list .button {
+	margin-top: 50px;
+}
+.list .button .item {
+	float: left;
+	margin-left: 20px;
+}
+.list .button .item i {
+	vertical-align:0px;
+}
+.list .button .split {
+	border-left: 1px solid #dddddd;
+	height: 24px;
+	margin-top: 4px;
+	width: 1px;
+}
+.list .button .btn {
+	height: 30px;
+	line-height: 28px;
+	padding: 0 18px;
+}
+.list .button .item:first-child {
+	margin-left: 0;
+}
+.list .mytable {
+	margin-top: 20px;
+}

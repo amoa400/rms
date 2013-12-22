@@ -23,6 +23,22 @@
 .form_div .content .item label {font-weight:normal;cursor:pointer;}
 .form_div .content .item .file {height:40px;}
 
+/* 表格 */
+.table_div {}
+.table_div table {
+	width: 100%;
+	border: 1px solid #d0d1d2;
+}
+.table_div td {
+	border: 1px solid #d0d1d2;
+	text-align: center;
+	padding: 12px 10px;
+}
+.table_div table tr:first-child td {
+	color: #0066aa;
+}
+
+
 /* 日历选择器 */
 .ftv_date_picker {position:absolute;border:1px solid #dbdbdb;border:1px solid #8cb8db;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:5px;background:#ffffff;width:250px;}
 .ftv_date_picker .sel {padding:5px;border-bottom:1px solid #dbdbdb;background:#85c7fa;}

@@ -1,0 +1,5 @@
+{
+  "/position": "position/list",
+  "/position/create": "position/create",
+  "/activity": "activity/index"
+}

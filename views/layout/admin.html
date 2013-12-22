@@ -117,7 +117,6 @@
 				<div class="version"><%= brand %>-beta<br>v1.0</div>
 			</div>
 			<div class="page_content"></div>
-			<div class="page_right"></div>
 		</div>
 
 		<div class="loading hidden">
@@ -130,11 +129,18 @@
 			.js('/js/jquery.base64.js')
 			.js('/js/jquery.mousewheel.js')
 			.js('/js/jquery.resize.js')
+			.js('/js/jquery.json.js')
 			.js('/js/global.js')
 			.js('/js/fantview.js')
 			.js('/js/admin.js')
 			.done(assetsMap, '')
 		%>
+
+		<script>
+			viewsVersion = <%- viewsVersion %>;
+			lsg = localStorage;
+			ssg = sessionStorage;
+		</script>
 
 	</body>
 
